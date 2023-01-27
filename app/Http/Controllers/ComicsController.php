@@ -67,7 +67,9 @@ class ComicsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $comicToEdit = Comic::findOrFail($id);
+
+        return view('comic.edit', compact('comicToEdit'));
     }
 
     /**
