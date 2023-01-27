@@ -22,7 +22,7 @@ class ComicsTableSeeder extends Seeder
         foreach ($comicsArray as $comic) {
             $newComic = new Comic();
             $newComic->title = $comic["title"];
-            $newComic->description = $comic["description"];
+            $newComic->description = substr($comic["description"], 0, 50);
             $newComic->thumb = $comic["thumb"];
             $newComic->price = $comic["price"];
             $newComic->series = $comic["series"];

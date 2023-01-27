@@ -29,7 +29,8 @@
             <div class="mb-3">
                 <label class="form-label">Genere di fumetto</label>
                 <input type="text" class="form-control" name="type">
-            </div>     
+            </div>
+            <button class="btn btn-lg border" type="submit">Salva fumetto</button>     
         </form>  
     </div> 
 @endsection
