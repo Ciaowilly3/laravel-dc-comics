@@ -6,6 +6,7 @@
     </h3>
     <div class="container bg-secondary rounded-3 p-3 text-center"> 
         <form action="{{route ('comic.store')}}" class="form-group w-75 d-inline-block" method="POST">
+            @csrf
             <div class="mb-3">
                 <label class="form-label">Titolo</label>
                 <input type="text" class="form-control" name="title">

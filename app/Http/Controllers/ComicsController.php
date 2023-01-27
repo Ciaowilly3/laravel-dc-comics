@@ -36,7 +36,14 @@ class ComicsController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $formData = $request->all();
+        $formData["thumb"] = "random thumb";
+
+        $newComic = new Comic();
+        $newComic->fill($formData);
+        $newComic->save();
+
+        return redirect()->route("index");   
     }
 
     /**
