@@ -5,9 +5,9 @@
         zona Di edit del fumetto {{$comicToEdit->title}}
     </h3>
     <div class="container bg-secondary rounded-3 p-3 text-center"> 
-        <form action="{{route ('comic.update')}}" class="form-group w-75 d-inline-block" method="POST">
-            @csrf
-            @method('put')
+        <form action="{{ route('comic.update', $comicToEdit) }}" class="form-group w-75 d-inline-block" method="POST">
+            @csrf()
+            @method('PUT')
             <div class="mb-3">
                 <label class="form-label">Titolo</label>
                 <input type="text" class="form-control" name="title">

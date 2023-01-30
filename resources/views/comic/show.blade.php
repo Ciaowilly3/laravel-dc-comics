@@ -1,4 +1,5 @@
 @extends('layouts.comic_layout');
+@section("title", "single comic");
 @section('content')
     <h3 class="text-success text-center">Ti trovi nella zona dove si mostra un solo comic</h3>
     <div class="container bg-secondary rounded py-5 px-3">

@@ -1,5 +1,5 @@
 @extends('layouts.comic_layout')
-
+@yield("title", "create")
 @section('content')
     <h3 class="text-center text-primary">
         zona creazione
