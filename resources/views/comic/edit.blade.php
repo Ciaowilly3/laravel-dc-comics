@@ -9,8 +9,19 @@
             @csrf()
             @method('PUT')
             <div class="mb-3">
-                <label class="form-label">Titolo</label>
-                <input type="text" class="form-control" name="title">
+                <label class="form-label ">Titolo</label>
+                <input type="text" 
+                    class="form-control  @error('title') is-invalid @elseif(old('title')) is-valid @enderror"
+                    name="title" value="{{old('title')}}">
+            @error('title')
+            <div class="invalid-feedback">
+                {{ $message }}
+                </div>
+            @elseif(old('title'))
+            <div class="valid-feedback">
+                Finalmente un titolo valido
+              </div>
+            @enderror
             </div>
             <div class="mb-3">
                 <label class="form-label">Descrizione</label>

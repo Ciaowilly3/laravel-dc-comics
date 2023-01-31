@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreComicRequest;
+use App\Http\Requests\UpdateComicRequest;
 use Illuminate\Http\Request;
 use App\Models\Comic;
 
@@ -34,13 +36,14 @@ class ComicsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreComicRequest $request)
     {
-        $formData = $request->all();
-        $formData["thumb"] = "random thumb";
+        
+        $formData = $request->validated();
 
         $newComic = new Comic();
         $newComic->fill($formData);
+        $newComic["thumb"]="https://picsum.photos/200/300";
         $newComic->save();
 
         return redirect()->route("comic.index");   
@@ -79,9 +82,9 @@ class ComicsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comic $comic)
+    public function update(UpdateComicRequest $request, Comic $comic)
     {
-        $data = $request->all();
+        $data = $request->validated();
 
         // $comicToEdit = Comic::findOrFail($id);
 
